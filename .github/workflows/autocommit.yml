@@ -1,0 +1,21 @@
+name: duolingo sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: push
+        run: |
+          git config --local user.email "wangguoqin1001@gmail.com"
+          git config --local user.name "WANG Guoqin"
+          date >> .date
+          git add .
+          git commit -m 'auto commit' || echo "nothing to commit"
+          git push || echo "nothing to push"

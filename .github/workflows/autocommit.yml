@@ -1,4 +1,4 @@
-name: duolingo sync
+name: auto commit
 
 on:
   workflow_dispatch:

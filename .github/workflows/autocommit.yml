@@ -11,11 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: push
+      - name: Push
         run: |
           git config --local user.email "wangguoqin1001@gmail.com"
           git config --local user.name "WANG Guoqin"
-          date > .github/workflows/.date
+          date > .github/.date
           git add .
           git commit -m 'auto commit' || echo "nothing to commit"
           git push || echo "nothing to push"
